@@ -1,0 +1,22 @@
+{
+  "name": "grepy",
+  "version": "0.0.0",
+  "description": "Smart enough wrapper around grep",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grep"
+  ],
+  "author": "Grisha Pushkov",
+  "license": "ISC",
+  "dependencies": {
+    "concat-stream": "^1.4.7",
+    "duplexer2": "0.0.2",
+    "split": "^0.3.3",
+    "strip-ansi": "^2.0.1",
+    "through2": "^0.6.3",
+    "util-extend": "^1.0.1"
+  }
+}
