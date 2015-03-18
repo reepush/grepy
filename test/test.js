@@ -3,11 +3,12 @@ var expect      = require('chai').expect,
     grepy       = require('../'),
     expect      = require('chai').expect,
     concat      = require('concat-stream'),
+    fs          = require('fs'),
     json2text   = require('./helpers').json2text,
     getExpected = require('./helpers').getExpected
 
 
-describe('grep(pattern, path, args, cb)', function() {
+describe('grepy(pattern, path, args, cb)', function() {
 
   it('outputs lines with matches', function(done) {
     grepy('twinkle', 'test/test.txt', [], function(match) {
@@ -55,14 +56,31 @@ describe('grep(pattern, path, args, cb)', function() {
 })
 
 
-// describe('grep(pattern, path, args, cb)', function() {
-//   it('outputs lines with matches', function(done) {
-//     grepy('twinkle', 'test/test.txt', [], function(match) {
-//       var text = json2text(match)
-//       var expected = getExpected('outputs_lines_with_matches')
-//       expect(text).to.equal(expected)
-//       done()
-//     })
-//   })
+describe('grepy.stream(pattern, path, args)', function() {
 
-// })
+  it('seems to be duplex stream', function() {
+    var stream = grepy.stream('twinkle', 'test/test.txt', [])
+    if (!stream.writable || !stream.readable)
+      throw new Error('Stream is not duplex one!')
+  })
+
+  it('could be piped and pipes out', function(done) {
+    var readable = fs.createReadStream('test/test.txt')
+    var grep = grepy.stream('twinkle', '-', [])
+
+    readable.pipe(grep).pipe(concat(function(data) {
+      if (data) done()
+        else done(new Error('No data were piped out!'))
+    }))
+  })
+
+  it('could be readable with path', function(done) {
+    var grep = grepy.stream('twinkle', 'test/test.txt', [])
+
+    grep.pipe(concat(function(data) {
+      if (data) done()
+        else done(new Error('No data were piped out!'))
+    }))
+  })
+
+})
