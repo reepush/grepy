@@ -1,30 +1,14 @@
-var expect = require('chai').expect,
-    stream = require('stream'),
-    fs     = require('fs'),
-    grepy  = require('../index.js'),
-    expect = require('chai').expect,
-    fs     = require('fs'),
-    concat = require('concat-stream')
+var expect      = require('chai').expect,
+    stream      = require('stream'),
+    grepy       = require('../'),
+    expect      = require('chai').expect,
+    concat      = require('concat-stream'),
+    json2text   = require('./helpers').json2text,
+    getExpected = require('./helpers').getExpected
 
-function json2text(lines) {
-  var output = ''
-  lines.forEach(function(line) {
-    line.chunks.forEach(function(chunk) {
-      output += chunk.str
-    })
-    output += '\n'
-  })
-
-  return output
-}
-
-function getExpected(name) {
-  var content = fs.readFileSync('test/expected-' + name + '.json', 'utf8')
-
-  return JSON.parse(content)
-}
 
 describe('grep(pattern, path, args, cb)', function() {
+
   it('outputs lines with matches', function(done) {
     grepy('twinkle', 'test/test.txt', [], function(match) {
       var text = json2text(match)
@@ -69,3 +53,16 @@ describe('grep(pattern, path, args, cb)', function() {
   })
 
 })
+
+
+// describe('grep(pattern, path, args, cb)', function() {
+//   it('outputs lines with matches', function(done) {
+//     grepy('twinkle', 'test/test.txt', [], function(match) {
+//       var text = json2text(match)
+//       var expected = getExpected('outputs_lines_with_matches')
+//       expect(text).to.equal(expected)
+//       done()
+//     })
+//   })
+
+// })
