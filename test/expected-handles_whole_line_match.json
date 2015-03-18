@@ -1,0 +1,42 @@
+[
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "1",
+    "chunks": [ { "str": "Twinkle, twinkle, little star,", "matched": true } ]
+  },
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "2",
+    "chunks": [ { "str": "How I wonder what you are!", "matched": true } ]
+  },
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "3",
+    "chunks": [ { "str": "Up above the world so high,", "matched": true } ]
+  },
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "4",
+    "chunks": [ { "str": "Like a diamond in the sky.", "matched": true } ]
+  },
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "5",
+    "chunks": [ { "str": "Twinkle, twinkle, little star,", "matched": true } ]
+  },
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "6",
+    "chunks": [ { "str": "How I wonder what you are! ", "matched": true } ]
+  },
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "7",
+    "chunks": [ ]
+  },
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "8",
+    "chunks": [ { "str": "Far, so far", "matched": true } ]
+  }
+]

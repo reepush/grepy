@@ -57,8 +57,7 @@ function parse(line, enc, cb) {
 function grepy(pattern, path, args, cb) {
   grepy.stream(pattern, path, args)
     .pipe(concat(function(res) {
-      var json = '[' + JSON.stringify(res) + ']'
-      cb(JSON.parse(json))
+      cb(res)
     }))
 }
 

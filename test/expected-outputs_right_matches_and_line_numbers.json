@@ -1,0 +1,19 @@
+[
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "1",
+    "chunks": [
+      { "str": "Twinkle, ", "matched": false },
+      { "str": "twinkle", "matched": true },
+      { "str": ", little star,", "matched": false }
+    ]
+  },
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "5",
+    "chunks": [ { "str": "Twinkle, ", "matched": false },
+      { "str": "twinkle", "matched": true },
+      { "str": ", little star,", "matched": false }
+    ]
+  }
+]

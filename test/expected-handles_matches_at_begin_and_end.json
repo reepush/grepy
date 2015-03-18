@@ -1,0 +1,11 @@
+[
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "8",
+    "chunks": [
+      { "str": "Far", "matched": true },
+      { "str": ", so ", "matched": false },
+      { "str": "far", "matched": true }
+    ]
+  }
+]
