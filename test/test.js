@@ -53,6 +53,15 @@ describe('grepy(pattern, path, args, cb)', function() {
     })
   })
 
+  it('skips context delimiter', function(done) {
+    var args = grepy.defaultArgs.concat('--context=1')
+    grepy('twinkle', 'test/test.txt', args, function(match) {
+      var expected = getExpected('skips_context_delimiter', 'parse')
+      expect(match).to.deep.equal(expected)
+      done()
+    })
+  })
+
 })
 
 

@@ -19,6 +19,10 @@ function parse(line, enc, cb) {
   line = line.toString()
   if (!line) return cb()
 
+  // skip context delimiter
+  var delimiter = '\u001b[36m\u001b[K' + '--' + '\u001b[m\u001b[K'
+  if (line == delimiter) return cb()
+
   var filename = capture('FILENAME')
   var lineNumber = capture('LINE_NUMBER')
   capture('DELIMITER')
