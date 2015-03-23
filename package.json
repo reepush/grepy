@@ -1,16 +1,23 @@
 {
   "name": "grepy",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Smart enough wrapper around grep",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "keywords": [
-    "grep"
+    "grep",
+    "wrapper",
+    "parser",
+    "stream"
   ],
   "author": "Grisha Pushkov",
-  "license": "ISC",
+  "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4evergreen/grepy.git"
+  },
   "dependencies": {
     "concat-stream": "^1.4.7",
     "duplexer2": "0.0.2",
