@@ -41,7 +41,7 @@ function parse(line, enc, cb) {
     chunks.push({ str: stripAnsi(line.substr(match.start, match.length)), matched: true })
     i = match.start + match.length
   })
-  if (i < (line.length-1))
+  if (i < line.length)
     chunks.push({ str: line.slice(i), matched: false })
 
   cb(null, {

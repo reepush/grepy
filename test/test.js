@@ -62,6 +62,15 @@ describe('grepy(pattern, path, args, cb)', function() {
     })
   })
 
+  it('outputs last not matched character', function(done) {
+    var args = grepy.defaultArgs
+    grepy('you are', 'test/test.txt', args, function(match) {
+      var expected = getExpected('outputs_last_not_matched_character')
+      expect(match).to.deep.equal(expected)
+      done()
+    })
+  })
+
 })
 
 

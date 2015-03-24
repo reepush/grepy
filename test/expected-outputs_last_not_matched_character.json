@@ -1,0 +1,20 @@
+[
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "2",
+    "chunks": [
+      { "str": "How I wonder what ", "matched": false },
+      { "str": "you are", "matched": true },
+      { "str": "!", "matched": false }
+    ]
+  },
+  {
+    "filename": "test\/test.txt",
+    "lineNumber": "6",
+    "chunks": [
+      { "str": "How I wonder what ", "matched": false },
+      { "str": "you are", "matched": true },
+      { "str": "! ", "matched": false }
+    ]
+  }
+]
