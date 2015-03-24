@@ -21,7 +21,7 @@ describe('grepy(pattern, path, args, cb)', function() {
 
   it('outputs right matches and line numbers', function(done) {
     grepy('twinkle', 'test/test.txt', [], function(match) {
-      var expected = getExpected('outputs_right_matches_and_line_numbers', 'parse')
+      var expected = getExpected('outputs_right_matches_and_line_numbers')
       expect(match).to.deep.equal(expected)
       done()
     })
@@ -30,7 +30,7 @@ describe('grepy(pattern, path, args, cb)', function() {
   it('handles ignore-case', function(done) {
     var args = grepy.defaultArgs.concat('--ignore-case')
     grepy('TWINKLE', 'test/test.txt', args, function(match) {
-      var expected = getExpected('handles_ignore_case', 'parse')
+      var expected = getExpected('handles_ignore_case')
       expect(match).to.deep.equal(expected)
       done()
     })
@@ -38,7 +38,7 @@ describe('grepy(pattern, path, args, cb)', function() {
 
   it('handles whole line match', function(done) {
     grepy('^.*$', 'test/test.txt', [], function(match) {
-      var expected = getExpected('handles_whole_line_match', 'parse')
+      var expected = getExpected('handles_whole_line_match')
       expect(match).to.deep.equal(expected)
       done()
     })
@@ -47,7 +47,7 @@ describe('grepy(pattern, path, args, cb)', function() {
   it('handles matches at begin and end', function(done) {
     var args = grepy.defaultArgs.concat('--extended-regexp')
     grepy('(F|f)ar', 'test/test.txt', args, function(match) {
-      var expected = getExpected('handles_matches_at_begin_and_end', 'parse')
+      var expected = getExpected('handles_matches_at_begin_and_end')
       expect(match).to.deep.equal(expected)
       done()
     })
@@ -56,7 +56,7 @@ describe('grepy(pattern, path, args, cb)', function() {
   it('skips context delimiter', function(done) {
     var args = grepy.defaultArgs.concat('--context=1')
     grepy('twinkle', 'test/test.txt', args, function(match) {
-      var expected = getExpected('skips_context_delimiter', 'parse')
+      var expected = getExpected('skips_context_delimiter')
       expect(match).to.deep.equal(expected)
       done()
     })
