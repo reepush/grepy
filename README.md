@@ -73,6 +73,7 @@ grepy('twinkle', 'test/test.txt', args, function(match) {
 
 ```js
 // npm install grepy request concat-stream
+
 var grepy = require('grepy')
 var request = require('request')
 var args = grepy.defaultArgs.concat(['--perl-regexp', '--only-matching'])
@@ -88,3 +89,6 @@ request('http://gismeteo.com').pipe(match).pipe(concat(function(data) {
   log(data[0].chunks[0].str + '°C')
 }))
 ```
+
+## Reference
+### [ladinu/node-grep](https://github.com/ladinu/node-grep)
